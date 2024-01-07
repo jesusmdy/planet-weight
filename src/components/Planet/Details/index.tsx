@@ -9,7 +9,7 @@ const Curiosity: FC<{
   sublabel?: string;
 }> = ({ name, label, value, sublabel }) => {
   return (
-    <div className="w-1/2 flex gap-4 border-b border-slate-700 mb-4 pb-4">
+    <div className="w-full md:w-1/2 flex gap-4 border-b border-slate-700 mb-4 pb-4">
       <img
         className="w-12 h-12 filter invert"
         src={`/metrics/${name}.png`} alt={name}
@@ -32,17 +32,22 @@ const DetailsModal: FC<{
     <div
       className={
         classNames(
-          'fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 flex items-center justify-center transition-all duration-500 ease-in-out transform z-10',
+          'fixed top-0 left-0 w-screen h-auto md:h-screen bg-black bg-opacity-50 flex items-center justify-center transition-all duration-500 ease-in-out transform z-10',
           isOpen ? 'opacity-100' : 'opacity-0 -translate-y-full',
         )
       }
       onClick={onClose}
     >
       <div
-        className="bg-slate-900 border border-slate-700 shadow-xl rounded-3xl w-full max-w-screen-md relative"
+        className={
+          classNames(
+            'bg-slate-900 border border-slate-700 shadow-xl rounded-t-3xl md:rounded-3xl w-full md:w-screen h-screen md:h-auto max-w-screen-md relative',
+            'overflow-auto md:overflow-hidden',
+          )
+        }
         onClick={e => e.stopPropagation()}
       >
-        <div className="flex items-center flex-col -mt-24">
+        <div className="flex items-center flex-col mt-8">
           <img className="w-1/4" src={planet.image} alt={planet.name} />
           <div>
             <h2 className="text-3xl font-bold">{planet.name}</h2>
@@ -50,7 +55,7 @@ const DetailsModal: FC<{
           <button onClick={onClose} className="absolute left-0 top-0 px-4 py-2 text-sm font-bold m-4">← Go Back</button>
         </div>
         <p className="text-sm mx-8 my-4">{planet.description}</p>
-        <div className="mx-8 my-4 flex flex-wrap gap-y-2">
+        <div className="mx-8 my-4 flex flex-col md:flex-row flex-wrap gap-y-2">
           {
             planet.curiosities.map(curiosity => (
               <Curiosity key={curiosity.name} {...curiosity} />

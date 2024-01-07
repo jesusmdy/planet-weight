@@ -34,7 +34,7 @@ const App: FC = () => {
             className={
               classNames(
                 'w-full bg-transparent text-4xl font-bold outline-none border border-slate-700 rounded-[40px] py-4 px-8',
-                'appearance-none'
+                'appearance-none w-[93%] mx-auto md:w-full'
               )
             }
           />

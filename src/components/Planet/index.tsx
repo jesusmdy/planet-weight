@@ -31,7 +31,7 @@ const Planet: FC<PlanetProps> = ({ planet, weight }) => {
   return (
     <Fragment>
       <div
-        className="w-1/4 p-4"
+        className="w-1/2 md:w-1/4 p-4"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -45,7 +45,7 @@ const Planet: FC<PlanetProps> = ({ planet, weight }) => {
             }
           >
             <img className="w-full" src={planet.image} alt={planet.name} />
-            <div className="flex items-center">
+            <div className="flex flex-col md:flex-row items-center">
               <h2 className="text-2xl font-bold flex-1">{planet.name}</h2>
               <p className="font-bold">{weightOnPlanet}</p>
             </div>
