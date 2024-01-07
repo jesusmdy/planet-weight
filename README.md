@@ -1,8 +1,18 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Planet weight calculator
 
-Currently, two official plugins are available:
+  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dead simple application to know your weight in different planets of our solar system. Get fun using it :)
+
+  
+### Deployment status:
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3e7b18a3-6228-45df-a33d-f5c1750fbc31/deploy-status)](https://app.netlify.com/sites/planetcalculator/deploys)
+
+### Running this project:
+
+ - Clone this code
+ - Install dependencies: `npm install` (node v18 and above)
+ - Run dev environment: `npm run dev`
+ - Open browser: `http://localhost:5173/` 
+ - Make a deployment build: `npm run buikd`
