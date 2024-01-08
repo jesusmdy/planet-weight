@@ -32,8 +32,9 @@ const DetailsModal: FC<{
     <div
       className={
         classNames(
-          'fixed top-0 left-0 w-screen h-auto md:h-screen bg-black bg-opacity-50 flex items-center justify-center transition-all duration-500 ease-in-out transform z-10',
+          'bg-black/50 flex items-start xs:items-start md:items-center justify-center transition-all duration-500 ease-in-out transform z-10',
           isOpen ? 'opacity-100' : 'opacity-0 -translate-y-full',
+          'fixed inset-0 w-screen h-screen overflow-y-auto'
         )
       }
       onClick={onClose}
@@ -41,8 +42,7 @@ const DetailsModal: FC<{
       <div
         className={
           classNames(
-            'bg-slate-900 border border-slate-700 shadow-xl rounded-t-3xl md:rounded-3xl w-full md:w-screen h-screen md:h-auto max-w-screen-md relative',
-            'overflow-auto md:overflow-hidden',
+            'bg-slate-900 border border-slate-700 shadow-xl rounded-t-3xl md:rounded-3xl w-full md:w-screen max-w-screen-md relative h-max',
           )
         }
         onClick={e => e.stopPropagation()}
